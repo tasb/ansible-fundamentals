@@ -1,0 +1,10 @@
+web:
+  hosts:
+    web01.prod.example.com:
+    web02.prod.example.com:
+db:
+  hosts:
+    db01.prod.example.com:
+backup:
+  hosts:
+    backup01.prod.example.com:

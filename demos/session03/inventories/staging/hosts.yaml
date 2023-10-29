@@ -1,0 +1,10 @@
+web:
+  hosts:
+    web01.staging.example.com:
+    web02.staging.example.com:
+db:
+  hosts:
+    db01.staging.example.com:
+backup:
+  hosts:
+    backup01.staging.example.com:
