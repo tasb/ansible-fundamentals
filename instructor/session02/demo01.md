@@ -69,7 +69,7 @@ ansible all -m ping
 ## Run copy file on k8snodes pattern
 
 ```bash
-ansible k8snodes -m copy -a "src=/etc/hosts dest=/tmp/hosts"
+ansible nodes -m copy -a "src=/etc/hosts dest=/tmp/hosts"
 ```
 
 ## Install nginx-light

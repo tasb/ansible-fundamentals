@@ -1,19 +1,8 @@
 ungourped:
-linux:
-  hosts:
-    tiberna-rasp-001:
-    tiberna-rasp-002:
-    tiberna-rasp-003:
-docker:
-  hosts:
-    tiberna-rasp-001:
 webserver:
   hosts:
     tiberna-rasp-002:
-k8scontrol:
-  hosts:
-    tiberna-rasp-001:
-k8snodes:
+nodes:
   hosts:
     tiberna-rasp-002:
     tiberna-rasp-003:

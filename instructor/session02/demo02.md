@@ -3,21 +3,21 @@
 ## Run ping command
 
 ```bash
-ansible k8snodes -m ping
+ansible nodes -m ping
 ```
 
 ## Use ssh key on command line
 
 ```bash
-ansible k8snodes -m ping --private-key=/home/ubuntu/ssh-keys/tiberna-key.pem
+ansible nodes -m ping --private-key=/home/ubuntu/ssh-keys/tiberna-key.pem
 ```
 
 ## Use user on command line
 
 ```bash
-ansible k8snodes -m ping --user=ubuntu -k
+ansible nodes -m ping --user=ubuntu -k
 
-ansible k8snodes -m ping --user=ubuntu --ask-pass
+ansible nodes -m ping --user=ubuntu --ask-pass
 ```
 
 ## Use ssh key in config file
@@ -25,7 +25,6 @@ ansible k8snodes -m ping --user=ubuntu --ask-pass
 1. Edit ansible.cfg
 2. Uncomment private_key_file
 
+```bash
+ansible nodes -m ping
 ```
-ansible k8snodes -m ping
-```
-
