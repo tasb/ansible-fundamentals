@@ -2,16 +2,15 @@
   gather_facts: no
   hosts: webservers
   tasks:
-
     - name: Create directory for ansible custom facts
       ansible.builtin.file:
         state: directory
         recurse: true
         path: /etc/ansible/facts.d
 
-    - name: Install custom ipmi fact
+    - name: Install custom fact file
       ansible.builtin.copy:
-        src: ipmi.fact
+        src: custom_facts/*
         dest: /etc/ansible/facts.d
 
     - name: Re-read facts after adding custom fact
