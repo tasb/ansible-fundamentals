@@ -23,6 +23,7 @@ Open the file ansible.cfg in the current directory
 
 ## Run ping locally
 
+
 ```bash
 ansible localhost -m ping
 ```

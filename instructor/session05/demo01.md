@@ -1,0 +1,1 @@
+ansible <hostname> -m ansible.builtin.setup

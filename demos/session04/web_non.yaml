@@ -1,0 +1,29 @@
+---
+- name: Non-idempotent installation and configuration of Nginx
+  hosts: web
+  vars:
+    static_files_path: "/opt/nginx/static"
+  tasks:
+    - name: Attempt to install Nginx without checking its current state
+      become: yes  # Use privilege escalation to run tasks as root
+      command: apt-get install -y nginx={{ nginx_version }}
+
+    - name: Attempt to create the static files directory without checking its current state
+      become: yes
+      command: mkdir -p {{ static_files_path }}
+
+    - name: Copy static files from control node to target without checking if they already exist
+      become: yes
+      command: cp -r /home/ubuntu/ansible-fundamentals/demos/session04/static/index.html {{ static_files_path }}
+
+    - name: Attempt to append Nginx configuration without checking its current state
+      become: yes  # Use privilege escalation to run tasks as root
+      shell: |
+        echo "location /about {" >> /etc/nginx/sites-available/default
+        echo "    alias {{ static_files_path }};" >> /etc/nginx/sites-available/default
+        echo "    try_files $uri $uri/ =404;" >> /etc/nginx/sites-available/default
+        echo "}" >> /etc/nginx/sites-available/default
+
+    - name: Reload Nginx without checking if it's necessary
+      become: yes  # Use privilege escalation to run tasks as root
+      command: systemctl reload nginx
