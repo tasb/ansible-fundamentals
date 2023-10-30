@@ -12,7 +12,7 @@
     - name: Install custom fact file
       become: true
       ansible.builtin.copy:
-        src: custom_facts/*
+        src: ./custom_facts/
         dest: /etc/ansible/facts.d
 
     - name: Re-read facts after adding custom fact
