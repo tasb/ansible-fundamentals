@@ -1,6 +1,6 @@
 - name: Copy and run custom facts
   gather_facts: no
-  hosts: webservers
+  hosts: nodes
   tasks:
     - name: Create directory for ansible custom facts
       ansible.builtin.file:
