@@ -16,6 +16,7 @@
         dest: /etc/ansible/facts.d
 
     - name: Ensure script is executable
+      become: true
       file:
         path: "/etc/ansible/facts.d/list_folders.sh"
         mode: '0755'
