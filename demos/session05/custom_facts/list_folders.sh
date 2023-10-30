@@ -7,4 +7,4 @@ TARGET_DIR="/opt"
 DIR_LIST=$(find "$TARGET_DIR" -maxdepth 1 -type d | sed "s|^$TARGET_DIR/||" | sed '/^$/d' | tr '\n' ',' | sed 's/,$//')
 
 # Return as JSON
-echo "{\"directories\": [\"$DIR_LIST\"]}"
+echo "{\"directories\": [\"teste\"]}"
