@@ -18,3 +18,7 @@
     - name: Re-read facts after adding custom fact
       ansible.builtin.setup:
         filter: ansible_local
+
+    - name: Print all available facts
+      ansible.builtin.debug:
+        var: ansible_facts
