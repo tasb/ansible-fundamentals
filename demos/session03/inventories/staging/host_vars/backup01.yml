@@ -1,2 +1,3 @@
-backup_frequency: daily
+backup_frequency: weekly
 backup_location: /mnt/backup_drive
+backup_rotaion: 4

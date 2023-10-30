@@ -25,6 +25,7 @@ Get access to the content used during sessions.
 1. [Introduction to Ansible](slides/01.Introduction.pdf)
 2. [Run Ad-Hoc Commands](slides/02.RunAdHocCommands.pdf)
 3. [Inventory](slides/03.Inventories.pdf)
+4. [Playbook](slides/04.Playbooks.pdf)
 
 ## Demos
 
@@ -38,6 +39,10 @@ Here you may find the files used on demos.
     - [Authentication](instructor/session02/demo02.md)
 
 3. Session 03 ([Files](demos/session03))
+
+4. Session 04 ([Files](demos/session04))
+   - [Run Playbook](instructor/session04/demo01.md)
+   - [Use Idempotence](instructor/session04/demo02.md)
 
 ## Feedback
 
