@@ -3,12 +3,14 @@
   hosts: nodes
   tasks:
     - name: Create directory for ansible custom facts
+      become: true
       ansible.builtin.file:
         state: directory
-        recurse: true
+        recurse: true  
         path: /etc/ansible/facts.d
 
     - name: Install custom fact file
+      become: true
       ansible.builtin.copy:
         src: custom_facts/*
         dest: /etc/ansible/facts.d
