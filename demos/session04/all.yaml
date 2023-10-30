@@ -2,43 +2,45 @@
 - name: Create new user, group, and SSH key on all hosts
   hosts: all
   become: yes  # Use privilege escalation to run tasks as root
+  vars:
+    ssh_folder: "/home/{{ user }}/.ssh"
   tasks:
     - name: Create a new group
       group:
-        name: {{ group }}
+        name: "{{ group }}"
         state: present
+
+    - name: Check if user exists
+      getent:
+        database: passwd
+        key: "{{ user }}"
+      register: user_result
 
     - name: Create a new user
       user:
-        name:  {{ user }}
-        group:  {{ group }}  # Assign the user to the newly created group
+        name:  "{{ user }}"
+        group:  "{{ group }}"  # Assign the user to the newly created group
         createhome: yes  # Create a home directory for the user
         state: present
-
-    - name: Generate SSH key for the new user
-      openssh_keypair:
-        path: "/home/{{ user }}/.ssh/id_rsa"
-        owner: {{ user }}
-        group: {{ group }}
-        mode: '0600'
-      when: "'{{ user }}' not in ansible_user_ids"  # Only generate if user didn't exist before
 
     - name: Ensure .ssh directory exists for the new user
       file:
         path: "/home/{{ user }}/.ssh"
         state: directory
-        owner: {{ user }}
-        group: {{ group }}
+        owner: "{{ user }}"
+        group: "{{ group }}"
         mode: '0700'
 
-    - name: Place the public key in the authorized_keys file for the new user
-      authorized_key:
-        user: {{ user }}
-        state: present
-        key: "{{ lookup('file', '/home/{{ user }}/.ssh/id_rsa.pub') }}"
+    - name: Generate SSH key for the new user
+      openssh_keypair:
+        path: "{{ ssh_folder }}/id_rsa"
+        owner: "{{ user }}"
+        group: "{{ group }}"
+        mode: '0600'
+      when: user_result is defined and user_result.ansible_facts.getent_passwd is undefined  # Only generate if user didn't exist before
 
     - name: Fetch private key to control node
       fetch:
         src: "/home/{{ user }}/.ssh/id_rsa"
-        dest: "/home/ubuntu/ssh-keys/{{ inventory_hostname }}_id_rsa"
+        dest: "/home/ubuntu/ssh-keys/{{ user }}_{{ inventory_hostname }}_id_rsa"
         flat: yes
