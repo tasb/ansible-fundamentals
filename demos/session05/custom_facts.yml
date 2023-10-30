@@ -18,7 +18,7 @@
     - name: Ensure script is executable
       become: true
       file:
-        path: "/etc/ansible/facts.d/list_folders.sh"
+        path: "/etc/ansible/facts.d/list_folders.fact"
         mode: '0755'
 
     - name: Re-read facts after adding custom fact
