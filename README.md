@@ -45,7 +45,7 @@ Here you may find the files used on demos.
    - [Use Idempotence](instructor/session04/demo02.md)
 
 5. Session 05 ([Files](demos/session05))
-   1. 
+   - [Gathering facts and use custom facts](instructor/session05/demo01.md)
 
 ## Labs
 
