@@ -59,7 +59,6 @@ Add the following content to `simple_playbook.yml`:
 
 ```yaml
 ---
----
 - name: Expanded Ansible Playbook with 5 Tasks
   hosts: localhost
   connection: local
@@ -88,7 +87,7 @@ Add the following content to `simple_playbook.yml`:
 
     - name: Create a symbolic link to "info.txt"
       file:
-        src: ./ansible_lab/info.txt
+        src: info.txt
         dest: ./ansible_lab/link_to_info.txt
         state: link
 

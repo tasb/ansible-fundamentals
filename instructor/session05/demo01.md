@@ -1,4 +1,4 @@
-# Gatering facts and use custom facts
+# Gathering facts and use custom facts
 
 ## Show facts on localhost
 

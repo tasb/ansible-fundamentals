@@ -5,6 +5,15 @@ web:
 db:
   hosts:
     db01.prod.example.com:
+      vars:
+        db_version: 1400
+    backup01.prod.example.com:
+      vars:
+        x: 5
 backup:
   hosts:
     backup01.prod.example.com:
+      vars:
+        x: 9
+
+
