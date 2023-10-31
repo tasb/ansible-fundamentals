@@ -14,7 +14,7 @@ ansible-playbook -i inventory/dev web web.yaml --check
 
 ## Change nginx version variable
 
-- Edit inventory/dev/group_vars/web.yaml and set variable with latest
+- Edit inventory/dev/group_vars/web.yaml and set variable with `1.25.1-1~jammy`
 
 ```bash
 ansible-playbook -i inventory/dev web web.yaml --check

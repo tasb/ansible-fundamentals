@@ -44,6 +44,15 @@ Here you may find the files used on demos.
    - [Run Playbook](instructor/session04/demo01.md)
    - [Use Idempotence](instructor/session04/demo02.md)
 
+5. Session 05 ([Files](demos/session05))
+   1. 
+
+## Labs
+
+Here you may find the tutorial for hands-on labs.
+
+1. [Lab 01 - Run Ad-Hoc Commands and simple playbook](labs/lab01.md)
+
 ## Feedback
 
 For any feedback open up an issue describing what you have found and I'll return to you!
