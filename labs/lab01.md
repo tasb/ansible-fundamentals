@@ -53,7 +53,7 @@ Navigate to the [Azure Portal](https://portal.azure.com/#browse/Microsoft.Comput
 - **Virtual Machine Name**: `<your-prefix>-control-node`
 - **Availability options**: `No infrastructure redundancy required`
 - **Image**: `Ubuntu Server 20.04 LTS`
-- **Size**: `Standard_D2s_v3`
+- **Size**: `Standard_Dv2_v2`
 - **Username**: `azureuser`
 
 All the other configurations can be left as default.
