@@ -111,15 +111,7 @@ Finally let's try to run on a specific host. Run the following command:
 ansible -i inventory/hosts.yml server1 -m ansible.builtin.command -a "hostname"
 ```
 
-### Step 4: Change IP address on inventory file
-
-Since you've your servers on same Virtual Network as your Control Node, you can change the IP address on the inventory file to the private IP address of the servers.
-
-Edit the `hosts.yml` file and change the IP address of the servers to the private IP address of the servers.
-
-You can get the private IP address of the servers on Azure Portal.
-
-### Step 5: Create Group Variables
+### Step 4: Create Group Variables
 
 Create one directory named `group_vars` inside `inventory` folder.
 
@@ -131,7 +123,7 @@ ansible_user: azureuser
 
 On main `hosts.yml` file, remove `ansible_user: azureuser` from both servers.
 
-### Step 6: Test Group Variables
+### Step 5: Test Group Variables
 
 Test your inventory file using the `ansible-inventory` command:
 
@@ -164,7 +156,7 @@ server2 | SUCCESS => {
 }
 ```
 
-### Step 7: Create Host Variables
+### Step 6: Create Host Variables
 
 Create one directory named `host_vars` inside `inventory` folder.
 
