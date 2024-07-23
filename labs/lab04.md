@@ -52,6 +52,7 @@ Add the following content to the file:
       ansible.builtin.apt:
         name: redis-server
         state: present
+        update_cache: true
       when: ansible_facts['os_family'] == "Debian"
       notify:
         - Start Redis
@@ -426,6 +427,7 @@ After you added all the tasks, your `full_playbook.yml` should look like this:
       ansible.builtin.apt:
         name: redis-server
         state: present
+        update_cache: true
       when: ansible_facts['os_family'] == "Debian"
       register: redis_installed
       changed_when: true
