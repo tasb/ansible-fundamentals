@@ -39,7 +39,7 @@
         group: root
         mode: '0644'
 
-    - name: Replace "/var/www/html;" with "/opt/nginx/static;"
+    - name: Replace "/var/www/html;" with "{{ static_files_path }}"
       ansible.builtin.replace:
         path: /etc/nginx/sites-available/default
         regexp: "^\\s*root\\s+/var/www/html;"
